@@ -30,7 +30,7 @@ spec:
       image: docker.dev1.apimgcp.com/repository/docker-hosted/gateway                                      # Repository name, e.g docker.cluster1.example.com/repository/docker-hosted/gateway
       tag: '1'                                       # Image tag version, e.g 1.0
     imageCredentials:
-      name: "dockerCredsDev"                               # Image credential name, e.g nameExample
+      name: "docker-creds-dev"                               # Image credential name, e.g nameExample
       registry: "docker.dev1.apimgcp.com"                                   # Registry name, e.g docker.cluster1.example.com
       username: "admin"                               # Registry username, e.g dockerUser
     hazelcast:
