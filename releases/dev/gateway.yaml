@@ -15,20 +15,20 @@ spec:
     path: charts/gateway
     ref: master
   valuesFrom:
-    - secretKeyRef:
-        name: image-creds
-        key: image-creds.yaml
-    - secretKeyRef:
-        name: gateway-license
-        key: license.yaml
-    - secretKeyRef:
-        name: env
-        key: env.yaml
+  - secretKeyRef:
+      name: image-creds
+      key: image-creds.yaml
+  - secretKeyRef:
+      name: gateway-license
+      key: license.yaml
+  - secretKeyRef:
+      name: env
+      key: env.yaml
   values:
     replicaCount: 1
     container:
       image: docker.dev1.apimgcp.com/repository/docker-hosted/gateway                                      # Repository name, e.g docker.cluster1.example.com/repository/docker-hosted/gateway
-      tag: '15'                                       # Image tag version, e.g 1.0
+      tag: '16'                                       # Image tag version, e.g 1.0
     imageCredentials:
       name: "docker-creds-dev"                               # Image credential name, e.g nameExample
       registry: "docker.dev1.apimgcp.com"                                   # Registry name, e.g docker.cluster1.example.com
@@ -37,9 +37,9 @@ spec:
       enabled: false
     service:
       ports:
-        - name: http
-          internal: 8080
-          external: 80
-        - name: https
-          internal: 8443
-          external: 443
+      - name: http
+        internal: 8080
+        external: 80
+      - name: https
+        internal: 8443
+        external: 443
